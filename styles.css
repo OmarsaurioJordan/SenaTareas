@@ -1,0 +1,73 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #133b09;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+form {
+    border: 1px solid #416140;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #a6ee90;
+}
+form div {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input, textarea, button, select {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-top: 5px;
+    margin-right: 10px;
+    border: 1px solid #416140;
+    border-radius: 8px;
+}
+textarea {
+    resize: vertical;
+}
+
+.btn {
+    background-color: #29a12f;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: inline-block;
+    border: 1px solid #416140;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #135e26;
+}
+
+.item-list {
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #f4f4f4;
+}
+.item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+label, input, textarea, button, select, .btn, .item {
+    font-size: 16px;
+}
