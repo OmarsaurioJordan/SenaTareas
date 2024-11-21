@@ -2,7 +2,7 @@
 CREATE TABLE fichas (
   id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   nombre tinytext UNIQUE NOT NULL,
-  password tinytext UNIQUE NOT NULL
+  password tinytext NOT NULL
 );
 
 CREATE TABLE materias (
@@ -30,7 +30,8 @@ CREATE TABLE tareas (
   materia int UNSIGNED NOT NULL,
   fecha date NOT NULL,
   titulo tinytext NOT NULL,
-  descripcion tinytext NOT NULL,
+  descripcion text NOT NULL,
+  link tinytext,
   integrantes tinyint UNSIGNED NOT NULL,
   FOREIGN KEY (ficha)
         REFERENCES fichas(id)
@@ -40,4 +41,8 @@ CREATE TABLE tareas (
         REFERENCES materias(id)
         ON DELETE CASCADE
         ON UPDATE CASCADE
+);
+
+CREATE TABLE master (
+  password tinytext NOT NULL
 );
