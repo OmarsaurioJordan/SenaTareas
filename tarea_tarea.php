@@ -5,6 +5,7 @@ include 'tool_db.php';
 // inicializar las variables de entrada y salida
 $ficha = isset($_GET['ficha']) ? $_GET['ficha']: null;
 $tarea = isset($_GET['tarea']) ? $_GET['tarea']: null;
+$rematerias = isset($_GET['rematerias']) ? $_GET['rematerias']: null;
 $nameficha = "???";
 
 if ($ficha != null) {
@@ -31,7 +32,16 @@ if ($ficha != null) {
     <!-- titulo principal -->
     <header>
         <h1 class="titulo">Tarea de <?php echo $nameficha; ?></h1>
-        <a href="tarea_lista.php?ficha=<?php echo $ficha; ?>" class="btn">Volver al Listado</a>
+        <?php
+        if ($rematerias != null) {
+            // volver a lista de materias
+            echo "<a href='materia_lista.php?ficha=$ficha' class='btn'>Volver al Listado</a>";
+        }
+        else {
+            // volver a lista de tareas
+            echo "<a href='tarea_lista.php?ficha=$ficha' class='btn'>Volver al Listado</a>";
+        }
+        ?>
     </header>
     
     <!-- informacion de la tarea -->

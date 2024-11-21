@@ -73,7 +73,7 @@ while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
                         url = "tarea_lista.php?ficha=";
                         break;
                         case "btnMaterias":
-                        url = "";
+                        url = "materia_lista.php?ficha=";
                         break;
                     case "btnNueva":
                         url = "tarea_nueva.php?ficha=";

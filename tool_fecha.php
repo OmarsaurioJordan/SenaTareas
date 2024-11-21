@@ -31,6 +31,20 @@ function FormatoDate($lafecha) {
             $formato = str_replace($en, $es, $formato);
         }
     }
+    // calcular lod dias de diferencia
+    $fechin = new DateTime($lafecha);
+    $hoy = new DateTime();
+    $dif = $hoy -> diff($fechin);
+    $dias = $dif -> days;
+    $formato .= " (" . $dias . " días)";
     return $formato;
+}
+function Los_dias($lafecha) {
+    // calcular lod dias de diferencia
+    $fechin = new DateTime($lafecha);
+    $hoy = new DateTime();
+    $dif = $hoy -> diff($fechin);
+    $dias = $dif -> days;
+    return $dias;
 }
 ?>

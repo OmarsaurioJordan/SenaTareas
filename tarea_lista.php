@@ -51,8 +51,8 @@ if ($ficha != null) {
             foreach ($results as $row) {
                 echo "<div class='item'>";
                 echo "<p><a href='tarea_tarea.php?ficha=" . $ficha .
-                    "&tarea=" . $row['id'] . "'>";
-                echo "<strong>" . $row['titulo'] . "</strong></a></p>";
+                    "&tarea=" . $row['id'] . "'>" .
+                    "<strong>" . $row['titulo'] . "</strong></a></p>";
                 echo "<p><u>" . $row['matname'] . "</u>, " . IntegrToTxt($row['integrantes']);
                 echo "<p>" . FormatoDate($row['fecha']) . "</p>";
                 echo "</div>";
@@ -77,7 +77,7 @@ if ($ficha != null) {
     <!-- listado de tareas antiguas -->
     <section class="item-list">
         <?php
-        // Consulta para obtener los items
+        // consulta para obtener los items
         $stmt = $pdo -> prepare("SELECT tareas.id, tareas.titulo, tareas.integrantes,
             tareas.fecha, materias.nombre AS matname
             FROM tareas JOIN materias ON tareas.materia = materias.id
