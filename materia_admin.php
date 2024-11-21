@@ -55,6 +55,7 @@ if ($ficha != null) {
             <input type="text" id="nombre" name="nombre" autocomplete="off" required>
         </div>
         <input type="hidden" name="tipo" value="C">
+        <input type="hidden" name="ficha" value="<?php echo $ficha; ?>">
         <button type="submit" class="btn">Crear Materia</button>
     </form>
 
@@ -75,6 +76,7 @@ if ($ficha != null) {
             <input type="text" id="nombre" name="nombre" autocomplete="off">
         </div>
         <input type="hidden" name="tipo" value="U">
+        <input type="hidden" name="ficha" value="<?php echo $ficha; ?>">
         <button type="submit" class="btn">Actualizar Materia</button>
     </form>
 
@@ -91,6 +93,7 @@ if ($ficha != null) {
             </select>
         </div>
         <input type="hidden" name="tipo" value="D">
+        <input type="hidden" name="ficha" value="<?php echo $ficha; ?>">
         <button type="submit" class="btn">Eliminar Materia</button>
     </form>
 

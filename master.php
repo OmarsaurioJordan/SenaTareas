@@ -36,6 +36,8 @@ if ($tipo != null) {
         if (password_verify($password, $the_password)) {
             switch ($tipo) {
 
+                // nota: el nombre es UNIQUE en la DB asi no requiere codigo de comprobaciones
+
                 case "C":
                     $stmt = $pdo -> prepare("INSERT INTO fichas (nombre,
                         password) VALUES (?, ?)");
@@ -66,16 +68,29 @@ if ($tipo != null) {
                         $mensaje = "nada que actualizar...";
                     }
                     if ($ok) {
-                        if ($stmt) {
+                        if ($stmt == true) {
                             $mensaje = "Ficha Actualizada!!!";
                         }
                     }
                     break;
                 
                 case "D":
-                    $stmt = $pdo -> prepare("DELETE FROM fichas WHERE id=?");
-                    if ($stmt -> execute([$id])) {
+                    try {
+                        $pdo -> beginTransaction();
+                        // eliminar la ficha, esto deberia eliminar tareas y conexiones
+                        // con materias dado que son tipo CASCADE
+                        $stmt = $pdo -> prepare("DELETE FROM fichas WHERE id=?");
+                        $stmt -> execute([$id]);
+                        // eliminar materias que no tengan conexion a fichas
+                        $stmt = $pdo -> prepare("DELETE FROM materias WHERE id NOT IN
+                            (SELECT materia FROM fichamat)");
+                        $stmt -> execute([]);
+                        // ejecutar todas las operaciones
+                        $pdo -> commit();
                         $mensaje = "Ficha Eliminada!!!";
+                    }
+                    catch (Exception $e) {
+                        $pdo -> rollBack();
                     }
                     break;
             }
