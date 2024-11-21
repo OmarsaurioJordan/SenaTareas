@@ -59,6 +59,7 @@ while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
         </div>
     </form>
 
+    <!-- funcion para actualizar links a diferentes paginas -->
     <script>
         const selector = document.getElementById("laficha");
         const botones = document.querySelectorAll(".btn");
@@ -78,7 +79,7 @@ while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
                         url = "tarea_nueva.php?ficha=";
                         break;
                     case "btnAdmin":
-                        url = "";
+                        url = "materia_admin.php?ficha=";
                         break;
                 }
                 boton.setAttribute('href', url + valor);
@@ -87,6 +88,49 @@ while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
 
         selector.addEventListener('change', actualizarEnlaces);
         actualizarEnlaces();
+    </script>
+
+    <!-- acerca de del software -->
+    <p class="w"><strong>¿Para qué sirve esto?</strong></p>
+    <p class="w">para mantenerte al tanto de las tareas que te dejan, algunos alumnos 
+        pilos manejarán la contraseña de sus fichas y publicarán las nuevas tareas, 
+        todos los demás podrán verlas</p>
+    <p class="w"><strong>¿Por qué fué creado esto?</strong></p>
+    <p class="w">este desarrollo No es oficial del Sena, fué hecho por Omar Jordan J 
+        (Omwekiatl), alumno de Software en 2024 como parte de su práctica para 
+        desarrollo web y bases de datos</p>
+    <p class="w"><strong>¿Cómo obtengo una contraseña?</strong></p>
+    <p class="w">si quieres administrar las tareas que se suben a tu ficha, contacta 
+        al administrador al correo:</p>
+    <p class="w"><a href="" class="button" id="btnMail"
+        onclick="cambiaBotoncito(event)">Ver Mail</a></p>
+
+    <script>
+        function cambiaBotoncito(event) {
+            event.preventDefault();
+            const button = document.getElementById('btnMail');
+            switch (button.textContent) {
+                case "Ver Mail":
+                    button.textContent = "Siga Pulsando";
+                    break;
+                case "Siga Pulsando":
+                    button.textContent = "Dale Más";
+                    break;
+                case "Dale Más":
+                    button.textContent = "Ya Casi!!!";
+                    break;
+                case "Ya Casi!!!":
+                    button.textContent = "ojorcio@gmail.com";
+                    break;
+                case "ojorcio@gmail.com":
+                case "Recarga la Página":
+                    button.textContent = "Te Pasaste...";
+                    break;
+                case "Te Pasaste...":
+                    button.textContent = "Recarga la Página";
+                    break;
+            }
+        }
     </script>
 
 </body>

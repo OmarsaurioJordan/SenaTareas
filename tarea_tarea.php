@@ -31,7 +31,6 @@ if ($ficha != null) {
     <!-- titulo principal -->
     <header>
         <h1 class="titulo">Tarea de <?php echo $nameficha; ?></h1>
-        <h1 class="titulo">Tarea de <?php echo $nameficha; ?></h1>
         <a href="tarea_lista.php?ficha=<?php echo $ficha; ?>" class="btn">Volver al Listado</a>
     </header>
     
@@ -43,7 +42,7 @@ if ($ficha != null) {
         include 'tool_longtext.php';
         // Consulta para obtener la informacion
         $stmt = $pdo -> prepare("SELECT tareas.titulo, tareas.integrantes,
-            tareas.fecha, materias.nombre AS matname, tareas.descripcion
+            tareas.fecha, tareas.link, materias.nombre AS matname, tareas.descripcion
             FROM tareas JOIN materias ON tareas.materia = materias.id
             WHERE tareas.id=? AND ficha=?");
         $stmt -> execute([$tarea, $ficha]);
@@ -55,6 +54,9 @@ if ($ficha != null) {
                 echo "<p><strong>" . $row['titulo'] . "</strong></p>";
                 echo "<p><u>" . $row['matname'] . "</u>, " . IntegrToTxt($row['integrantes']);
                 echo "<p class='parrafo'>" . Salto_to_br($row['descripcion']) . "</p>";
+                if ($row['link'] != "") {
+                    echo "<p><a href='" . $row['link'] . "'>" . $row['link'] . "</a></p>";
+                }
                 echo "<p>" . FormatoDate($row['fecha']) . "</p>";
                 echo "</div>";
                 break;

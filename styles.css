@@ -83,3 +83,23 @@ label, input, textarea, button, select, .btn, .item {
     color: white;
     font-size: 20px;
 }
+
+.w {
+    color: white;
+    text-align: center;
+}
+
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #416140;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a.button:hover {
+    background-color: #135e26;
+    color: #ffeb3b;
+}

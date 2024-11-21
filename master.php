@@ -1,5 +1,12 @@
 <?php
 include 'tool_db.php';
+// commands git - github
+/*
+cd carpeta_proyecto_path
+git add .
+git commit -m "su texto rancio"
+git push origin main
+*/
 
 // inicializar las variables de entrada y salida
 $password = isset($_POST['password']) ? $_POST['password']: null;

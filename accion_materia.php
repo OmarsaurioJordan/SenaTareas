@@ -4,8 +4,10 @@ include 'tool_db.php';
 
 // inicializar las variables de entrada y salida
 $ficha = isset($_POST['ficha']) ? $_POST['ficha']: null;
-$tarea = isset($_POST['tarea']) ? $_POST['tarea']: null;
+$nombre = isset($_POST['nombre']) ? $_POST['nombre']: null;
+$materia = isset($_POST['materia']) ? $_POST['materia']: null;
 $password = isset($_POST['password']) ? $_POST['password']: null;
+$tipo = isset($_POST['tipo']) ? $_POST['tipo']: null;
 $okey = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -15,8 +17,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // verificar pasword para poder hacer la transaccion
     if (password_verify($password, $the_password)) {
-        $stmt = $pdo -> prepare("DELETE FROM tareas WHERE ficha=? AND id=?");
-        $okey = $stmt -> execute([$ficha, $tarea]);
+        switch ($tipo) {
+            
+            case "C":
+
+                break;
+            
+            case "U":
+
+                break;
+            
+            case "D":
+                $stmt = $pdo -> prepare("DELETE FROM tareas WHERE ficha=? AND id=?");
+                $okey = $stmt -> execute([$ficha, $tarea]);
+                break;
+        }
     }
 }
 ?>
@@ -35,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <header>
         <?php
         if ($okey) {
-            echo "<h1 class='titulo'>Tarea Eliminada!!!</h1>";
+            echo "<h1 class='titulo'>Solicitud Aprobada!!!</h1>";
         }
         else {
             echo "<h1 class='titulo'>clave incorrecta...</h1>";
@@ -46,16 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- boton para redireccionarse -->
     <form action="etc.php" method="post"  autocomplete="off">
         <div>
-            <?php
-            if ($okey) {
-                echo "<a href='tarea_lista.php?ficha=$ficha'" .
-                    "class='btn'>Ver Tareas</a>";
-            }
-            else {
-                echo "<a href='tarea_modificar.php?ficha=$ficha&tarea=$tarea'" .
-                    "class='btn'>Volver</a>";
-            }
-            ?>
+            <a href="materia_admin.php?ficha=<?php echo $ficha; ?>" class="btn">Volver</a>
         </div>
     </form>
 
