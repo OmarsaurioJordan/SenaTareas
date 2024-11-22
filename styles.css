@@ -63,7 +63,7 @@ textarea {
 .item {
     padding: 5px;
     border-bottom: 2px solid #164410;
-    line-height: 5px;
+    line-height: 1.2;
 }
 
 label, input, textarea, button, select, .btn, .item {
