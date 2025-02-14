@@ -99,6 +99,10 @@ while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
     <p class="w">este desarrollo No es oficial del Sena, fué hecho por Omar Jordan J 
         (Omwekiatl), alumno de Software en 2024 como parte de su práctica para 
         desarrollo web y bases de datos</p>
+    <p class="w"><strong>¿Puedo ver el código fuente?</strong></p>
+    <p class="w">por supuesto honey, aquí tienes el repositorio para que lo explores</p>
+    <p class="w"><a href="https://github.com/OmarsaurioJordan/sena_tareas"
+        class="button">GitHub</a></p>
     <p class="w"><strong>¿Cómo obtengo una contraseña?</strong></p>
     <p class="w">si quieres administrar las tareas que se suben a tu ficha, contacta 
         al administrador al correo:</p>

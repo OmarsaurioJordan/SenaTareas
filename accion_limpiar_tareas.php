@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <header>
         <?php
         if ($okey) {
-            echo "<h1 class='titulo'>Antiguas Tareas Eliminadas!!!</h1>";
+            echo "<h1 class='titulo'>Tareas Antiguas Eliminadas!!!</h1>";
         }
         else {
             echo "<h1 class='titulo'>clave incorrecta...</h1>";
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- boton para redireccionarse -->
     <form action="etc.php" method="post"  autocomplete="off">
         <div>
-            <a href="tarea_lista.php?ficha=<?php echo $ficha; ?>">Volver</a>
+            <a href="tarea_lista.php?ficha=<?php echo $ficha; ?>" class="btn">Volver</a>
         </div>
     </form>
 

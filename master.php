@@ -8,6 +8,9 @@ git commit -m "su texto rancio"
 git push origin main
 */
 
+// esta linea es la forma de crear un password, esto se pone en master DB
+//echo password_hash("contraseña_maestra_alguna", PASSWORD_DEFAULT);
+
 // inicializar las variables de entrada y salida
 $password = isset($_POST['password']) ? $_POST['password']: null;
 $id = isset($_POST['id']) ? $_POST['id']: null;

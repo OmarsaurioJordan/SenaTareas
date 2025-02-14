@@ -65,7 +65,7 @@ if ($ficha != null) {
     </section>
 
     <!-- formulario eliminar antiguas -->
-    <form action=".php" method="post"  autocomplete="off">
+    <form action="accion_limpiar_tareas.php" method="post"  autocomplete="off">
     <div>
         <label for="password">Contraseña de <?php echo $nameficha; ?>:</label>
         <input type="password" id="password" name="password"  autocomplete="off" required>
