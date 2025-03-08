@@ -3,9 +3,17 @@ include 'tool_db.php';
 // commands git - github
 /*
 cd carpeta_proyecto_path
+
+// para subir data
 git add .
 git commit -m "su texto rancio"
 git push origin main
+
+// para bajar data
+git pull origin main
+
+// para bajar todo por primera vez
+git clone link_al_repositorio
 */
 
 // esta linea es la forma de crear un password, esto se pone en master DB
