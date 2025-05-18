@@ -1,5 +1,9 @@
 SENA Tareas by Omwekiatl 2025
 
+Este software fué desarrollado para la clase de bases de datos, al momento de su desarrollo no tenía claro el concepto de Session ni tampoco se usaron librerías como Bootstrap para embellecer la aplicación, por lo que es un proyecto de bajo calibre enfocado en mostrar de una forma sencilla y con una problemática práctica, el CRUD con SQL.
+
+Si a la fecha aún existe el siguiente servidor: https://omwekiatl.xyz/sena_tareas/menu.php allí puede ver el sitio funcionando, utilice la contraseña 123 para la ficha Test.
+
 Instrucciónes de instalación local en XAMPP:
 - si no tiene instalado Git, instálelo.
 - vaya a la carpeta htdocs de xampp.
