@@ -1,6 +1,6 @@
 SENA Tareas by Omwekiatl 2025
 
-Este software fué desarrollado para la clase de bases de datos, al momento de su desarrollo no tenía claro el concepto de Session ni tampoco se usaron librerías como Bootstrap para embellecer la aplicación, por lo que es un proyecto de bajo calibre enfocado en mostrar de una forma sencilla y con una problemática práctica, el CRUD con SQL.
+Este software fué desarrollado para la clase de bases de datos, al momento de su desarrollo no tenía claro el concepto de Session ni tampoco se usaron librerías como Bootstrap para embellecer la aplicación, por lo que es un proyecto de bajo calibre enfocado en mostrar de una forma sencilla y con una problemática práctica, el CRUD con SQL. En el mismo se ha usado destrucción de registros en lugar de desactivación de los mismos, y los archivos de lógica PHP no tienen redirecciónes a sus respectivas páginas objetivo, he desarrollado videojuegos pero no mucho desarrollo web, por lo que estos conceptos los he ido integrando recientemente, se aclara que se está al tanto de ellos y suponen un trabajo futuro en esta mini aplicación.
 
 Si a la fecha aún existe el siguiente servidor: https://omwekiatl.xyz/sena_tareas/menu.php allí puede ver el sitio funcionando, utilice la contraseña 123 para la ficha Test.
 
